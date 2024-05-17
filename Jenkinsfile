@@ -1,10 +1,11 @@
-pipeline{
+pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
-            withMaven(maven: 'maven3') {
-                sh "mvn clean verify -DskipTests"
+                withMaven(maven: 'maven3') {
+                    sh "mvn clean verify -DskipTests"
                 }
             }
         }
